@@ -13,7 +13,13 @@ get '/hi' do
   "Hi, sup?"
 end
 
-get '/red_panda' do
+get '/random-red_panda' do
   @name = ["Slim Shady", "Eminem", "Marshall", "Stan"].sample
+  erb(:index)
+end
+
+get '/named-red_panda' do
+  p params
+  @name = params[:name]
   erb(:index)
 end
